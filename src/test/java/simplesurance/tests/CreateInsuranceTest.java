@@ -1,6 +1,11 @@
 package simplesurance.tests;
 
-public class CreateInsuranceTest {
+import org.testng.annotations.Test;
 
+public class CreateInsuranceTest extends Hooks{
 
+    @Test
+    public void sample(){
+        System.out.println("hi");
+    }
 }
