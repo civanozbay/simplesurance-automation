@@ -3,6 +3,7 @@ package simplesurance.tests;
 import org.testng.ITestContext;
 import org.testng.annotations.*;
 import simplesurance.listeners.LogListener;
+import simplesurance.pages.InsuranceHomePage;
 import simplesurance.utilities.ConfigurationReader;
 import simplesurance.utilities.Driver;
 import simplesurance.utilities.LoggerUtil;
@@ -33,12 +34,16 @@ public class Hooks {
     @BeforeClass
     public void setUp(){
         Driver.get().manage().window().maximize();
-        Driver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+        Driver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        InsuranceHomePage insuranceHomePage = new InsuranceHomePage();
+        insuranceHomePage.emailInput.sendKeys("testsellingpartner3@simplesurance.de");
+        insuranceHomePage.passwordInput.sendKeys("TestSellingPartner3Pass");
+        insuranceHomePage.nextBtn.click();
     }
 
     @AfterClass
     public void tearDown(){
-        Driver.closeDriver();
+//        Driver.closeDriver();
     }
 
 
