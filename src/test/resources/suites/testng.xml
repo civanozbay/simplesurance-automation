@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-    <test name="sample test">
+    <listeners>
+        <listener class-name="simplesurance.listeners.ExtentTestNGITestListener"/>
+    </listeners>
+    <test name="simplesurance test">
         <classes>
             <class name="simplesurance.tests.CreateInsuranceTest"/>
             <class name="simplesurance.tests.FilterTest"/>

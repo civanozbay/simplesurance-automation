@@ -56,7 +56,7 @@ public class FilterTest extends Hooks{
         insuranceHomePage.filterDropdown.click();
 
         insuranceHomePage.dateEndFilter.click();
-
+        insuranceHomePage.filterInput.sendKeys("31.05.2024");
         insuranceHomePage.filterInput.sendKeys(Keys.ENTER);
 
         String insuranceExpiryDateText = insuranceHomePage.insuranceActivationDate.getText();
@@ -64,7 +64,7 @@ public class FilterTest extends Hooks{
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd. MMMM yyyy", Locale.GERMAN);
         LocalDate parsedDateFromUI = LocalDate.parse(insuranceExpiryDateText, formatter);
 
-        Assert.assertTrue(parsedDateFromUI.isEqual(LocalDate.now()) || parsedDateFromUI.isBefore(LocalDate.now()));
+        Assert.assertTrue(parsedDateFromUI.isEqual(LocalDate.now()) || parsedDateFromUI.isBefore(LocalDate.of(2024,05,31)));
 
     }
 
