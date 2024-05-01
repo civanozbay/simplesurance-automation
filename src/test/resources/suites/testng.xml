@@ -4,6 +4,8 @@
     <test name="sample test">
         <classes>
             <class name="simplesurance.tests.CreateInsuranceTest"/>
+            <class name="simplesurance.tests.FilterTest"/>
+            <class name="simplesurance.tests.ImportCsvTest"/>
         </classes>
     </test>
 

@@ -22,4 +22,5 @@ public class ImportInsurancesPage extends BasePage{
     @FindBy(xpath = "//button[span='Versicherung erstellen']")
     public WebElement createInsuranceBtn;
 
+
 }

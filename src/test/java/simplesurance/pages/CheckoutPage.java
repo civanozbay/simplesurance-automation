@@ -3,6 +3,7 @@ package simplesurance.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+
 public class CheckoutPage extends BasePage{
 
     @FindBy(xpath = "//h3[@data-testid='total-component']")
@@ -38,5 +39,6 @@ public class CheckoutPage extends BasePage{
 
     @FindBy(xpath = "(//a[contains(@href,'/policy/details?id')])[1]")
     public WebElement firstCertificateNumber;
+
 
 }

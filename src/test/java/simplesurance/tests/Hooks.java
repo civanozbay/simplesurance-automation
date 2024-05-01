@@ -15,7 +15,7 @@ public class Hooks {
     @BeforeSuite(alwaysRun = true)
     public void globalSetup(){
         LoggerUtil.log("************************** Test Execution Started ************************************");
-        Driver.get().get(ConfigurationReader.get("url"));
+//        Driver.get().get(ConfigurationReader.get("url"));
     }
 
     @AfterSuite(alwaysRun = true)
@@ -31,8 +31,9 @@ public class Hooks {
         LoggerUtil.log("************************** Test Execution Finished ************************************");
     }
 
-    @BeforeClass
+    @BeforeMethod
     public void setUp(){
+        Driver.get().get(ConfigurationReader.get("url"));
         Driver.get().manage().window().maximize();
         Driver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         InsuranceHomePage insuranceHomePage = new InsuranceHomePage();
@@ -41,9 +42,9 @@ public class Hooks {
         insuranceHomePage.nextBtn.click();
     }
 
-    @AfterClass
+    @AfterMethod
     public void tearDown(){
-//        Driver.closeDriver();
+        Driver.closeDriver();
     }
 
 
