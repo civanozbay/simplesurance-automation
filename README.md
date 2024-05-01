@@ -15,11 +15,10 @@ ExtentReports
 **Installation**:
 Clone the project to your local machine:
    ```bash
-   git clone https://github.com/yourusername/yourprojectname.git
+   git clone https://github.com/civanozbay/simplesurance-automation.git
    ```
 Use Maven to install dependencies:
    ```bash
-  cd yourprojectname
   mvn clean install
   ```
 **Running Tests**
