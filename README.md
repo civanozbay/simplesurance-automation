@@ -1,7 +1,7 @@
-##Simplesurance-Automation
+## Simplesurance-Automation
 This project utilizes the TestNG testing framework combined with Allure reporting tool to conduct Selenium-based automation tests.
 
-###Getting Started
+### Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ###Prerequisites
