@@ -3,19 +3,25 @@ package simplesurance.tests;
 
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import simplesurance.listeners.LogListener;
 import simplesurance.pages.CheckoutPage;
 import simplesurance.pages.CreateNewInsurance;
 import simplesurance.pages.InsuranceHomePage;
 import simplesurance.utilities.ConfigurationReader;
 import simplesurance.utilities.Driver;
+import simplesurance.utilities.LoggerUtil;
 
 
+@Listeners({LogListener.class})
 public class CreateInsuranceTest extends Hooks{
 
     @Test
     public void createInsurance() {
+
+        LoggerUtil.log("Insurance creation test started.");
         InsuranceHomePage insuranceHomePage = new InsuranceHomePage();
         insuranceHomePage.newBtn.click();
 
@@ -46,7 +52,7 @@ public class CreateInsuranceTest extends Hooks{
         createNewInsurance.invoiceNumberInput.sendKeys("INV-1111");
 
         createNewInsurance.nextBtn.click();
-
+        LoggerUtil.log("Insurance information's are filled.");
         createNewInsurance.firstName.sendKeys("test");
         createNewInsurance.lastName.sendKeys("user");
         createNewInsurance.email.sendKeys("test@test.com");
@@ -56,7 +62,7 @@ public class CreateInsuranceTest extends Hooks{
         createNewInsurance.city.sendKeys("Berlin");
         createNewInsurance.country.sendKeys("DE");
         createNewInsurance.taxCode.sendKeys("12345");
-
+        LoggerUtil.log("Personal information's are filled.");
         createNewInsurance.nextBtn.click();
 
         for (WebElement checkbox : createNewInsurance.checkboxes) {
@@ -68,11 +74,13 @@ public class CreateInsuranceTest extends Hooks{
         CheckoutPage checkoutPage = new CheckoutPage();
         Assert.assertTrue(checkoutPage.checkoutSteps.isDisplayed());
         Assert.assertEquals(checkoutPage.totalAmount.getText(), "21,95 €");
+        LoggerUtil.log("Checkout steps are displayed.");
 
         checkoutPage.creditCard.click();
         checkoutPage.continuePaymentBtn.click();
 
         Driver.get().switchTo().frame(checkoutPage.cardNumberIframe);
+        LoggerUtil.log("Switched to iframe");
         checkoutPage.cardNumberInput.sendKeys(
                 ConfigurationReader.get("test_credit_card_number")+
                 ConfigurationReader.get("test_mm_aa")+
@@ -88,6 +96,7 @@ public class CreateInsuranceTest extends Hooks{
         checkoutPage.listeBtn.click();
 
         Assert.assertEquals(checkoutPage.firstCertificateNumber.getText(),certificateNum);
+        LoggerUtil.log("Test completed successfully with certificate number verification.");
     }
 
 

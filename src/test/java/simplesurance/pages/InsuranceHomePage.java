@@ -8,4 +8,6 @@ public class InsuranceHomePage extends BasePage{
     @FindBy(xpath = "//a[@href='/policy/create']")
     public WebElement newBtn;
 
+    @FindBy(xpath = "//a[@href='/policy/import']")
+    public WebElement importBtn;
 }
