@@ -12,7 +12,7 @@ Maven
 WebDriver (e.g., ChromeDriver)
 ExtentReports
 
-**Installation**:
+### **Installation**:
 Clone the project to your local machine:
    ```bash
    git clone https://github.com/civanozbay/simplesurance-automation.git
@@ -21,7 +21,7 @@ Use Maven to install dependencies:
    ```bash
   mvn clean install
   ```
-**Running Tests**
+### **Running Tests**
 Execute TestNG tests using the following Maven command:
    ```bash
    mvn test
