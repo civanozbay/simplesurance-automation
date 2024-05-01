@@ -4,7 +4,7 @@ This project utilizes the TestNG testing framework combined with Allure reportin
 ### Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-###Prerequisites
+### Prerequisites
 What you need to install the software:
 
 Java JDK 8 or higher
