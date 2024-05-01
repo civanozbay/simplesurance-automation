@@ -27,7 +27,7 @@ Execute TestNG tests using the following Maven command:
    ```bash
    mvn test
    ```
-**Viewing Reports**
+### **Viewing Reports**
 This project uses Extent Reports to generate detailed and visually appealing test reports.
 After running the tests, Extent Reports generates an HTML report in the test-output directory. To view the report, open the ExtentReport.html file in any web browser.
 
