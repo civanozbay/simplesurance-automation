@@ -18,8 +18,13 @@ public class ImportCsvTest extends Hooks{
         insuranceHomePage.importBtn.click();
 
         ImportInsurancesPage importInsurancesPage = new ImportInsurancesPage();
-        importInsurancesPage.importBtn.sendKeys(System.getProperty("user.dir")+"/src/test/resources/Follow up QA Automation Challenge data.csv");
-        LoggerUtil.log("Csv file uploaded.");
+
+        try {
+            importInsurancesPage.importBtn.sendKeys(System.getProperty("user.dir")+"/src/test/resources/Follow up QA Automation Challenge data.csv");
+            LoggerUtil.log("CSV file uploaded successfully.");
+        } catch (Exception e) {
+            LoggerUtil.log("Failed to upload CSV file: " + e.getMessage());
+        }
         importInsurancesPage.createInsuranceBtn.click();
         Assert.assertTrue(importInsurancesPage.greenCheckMark.isDisplayed());
 
