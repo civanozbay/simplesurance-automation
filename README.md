@@ -7,9 +7,9 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 What you need to install the software:
 
-Java JDK 8 or higher
-Maven
-WebDriver (e.g., ChromeDriver)
+Java JDK 8 or higher,
+Maven,
+WebDriver (e.g., ChromeDriver),
 ExtentReports
 
 ### **Installation**:
